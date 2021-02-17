@@ -1,20 +1,10 @@
 package datastruct
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestQueue(t *testing.T) {
-	s1 := "string 1"
-	s2 := s1
-	fmt.Println(s1, s2)
-	fmt.Println(&s1, &s2)
-
-	s2 = "string 2"
-	fmt.Println(s1, s2)
-	fmt.Println(&s1, &s2)
-
 	queue := NewQueue(10)
 
 	if !queue.IsEmpty() {
