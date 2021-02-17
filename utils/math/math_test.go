@@ -1,8 +1,8 @@
-package utils
+package math
 
 import "testing"
 
-func Test_max(t *testing.T) {
+func Test_Max(t *testing.T) {
 	type args struct {
 		a int
 		b int
@@ -18,14 +18,14 @@ func Test_max(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := max(tt.args.a, tt.args.b); got != tt.want {
-				t.Errorf("max() = %v, want %v", got, tt.want)
+			if got := Max(tt.args.a, tt.args.b); got != tt.want {
+				t.Errorf("Max() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
 
-func Test_min(t *testing.T) {
+func Test_Min(t *testing.T) {
 	type args struct {
 		a int
 		b int
@@ -41,8 +41,8 @@ func Test_min(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := min(tt.args.a, tt.args.b); got != tt.want {
-				t.Errorf("min() = %v, want %v", got, tt.want)
+			if got := Min(tt.args.a, tt.args.b); got != tt.want {
+				t.Errorf("Min() = %v, want %v", got, tt.want)
 			}
 		})
 	}
