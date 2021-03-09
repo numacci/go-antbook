@@ -8,14 +8,6 @@ type PairQueue struct {
 	size int
 }
 
-type Pair struct {
-	First, Second int
-}
-
-func (p *Pair) String() string {
-	return fmt.Sprintf("{%v, %v}", p.First, p.Second)
-}
-
 func NewPairQueue(cap int) *PairQueue {
 	return &PairQueue{data: make([]*Pair, 0, cap), size: 0}
 }
