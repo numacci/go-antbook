@@ -32,3 +32,17 @@ func UpperBound(x interface{}, key interface{}) int {
 	}
 	return -1
 }
+
+func UniqueInts(x []int) []int {
+	m := make(map[int]struct{}, len(x))
+	for _, v := range x {
+		m[v] = struct{}{}
+	}
+
+	uniq := make([]int, 0, len(m))
+	for k := range m {
+		uniq = append(uniq, k)
+	}
+	sort.Ints(uniq)
+	return uniq
+}

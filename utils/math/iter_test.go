@@ -1,6 +1,9 @@
 package math
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 func TestLowerBound(t *testing.T) {
 	type args struct {
@@ -53,6 +56,26 @@ func TestUpperBound(t *testing.T) {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := UpperBound(tt.args.x, tt.args.key); got != tt.want {
 				t.Errorf("UpperBound() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestUniqueInts(t *testing.T) {
+	type args struct {
+		x []int
+	}
+	tests := []struct {
+		name string
+		args args
+		want []int
+	}{
+		{name: "Unique Int Slice", args: args{x: []int{1, 1, 3, 2, 3, 4}}, want: []int{1, 2, 3, 4}},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := UniqueInts(tt.args.x); !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("UniqueInts() = %v, want %v", got, tt.want)
 			}
 		})
 	}
